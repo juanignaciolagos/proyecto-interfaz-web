@@ -4,6 +4,6 @@
  
  
  Desarrolladores :
- Alejandra Somodevilla, (https://github.com/asomodevilla)
- Leornard Rodriguez
- Juan Lagos, (https://github.com/juanignaciolagos)
+ Alejandra Somodevilla (https://github.com/asomodevilla),
+ Leornard Rodriguez,
+ Juan Lagos (https://github.com/juanignaciolagos).
