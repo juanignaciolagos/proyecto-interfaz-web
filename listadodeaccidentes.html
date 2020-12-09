@@ -11,7 +11,11 @@
     <!--estilo del error de jquery validator-->
     <style>
         #idcliente.error,
-        input.error,
+        #fecha.error,
+        #hora.error,
+        #lugar.error,
+        #origen.error,
+        #consecuencias.error,
         select.error,
         textarea.error {
             border: 3px solid red;
@@ -59,12 +63,10 @@
         $(document).ready(function () {
             $("#formulario").validate({
 
-
-
                 rules:
                 {
                     idcliente: { required: true, digits: true, min: 1, max: 9999 },
-                    fecha: { required: true, dpDate: true },
+                    fecha: { required: true, },
                     hora: { required: true },
                     lugar: { required: true, minlength: 1, maxlength: 149 },
                     origen: { required: true, maxlength: 100 },
@@ -94,58 +96,33 @@
 
 
         });
-    </script>
+        $(function () {
+            $("#btn").on("click", function () {
+                if ($('#formulario').valid()) {
+                    alert("Registro Valido");
+                    var idcliente = document.getElementById("idcliente").value;
+                    var fecha = document.getElementById("fecha").value;
+                    var hora = document.getElementById("hora").value;
+                    var lugar = document.getElementById("lugar").value;
+                    var origen = document.getElementById("origen").value;
+                    var cliente = document.getElementById("cliente").value;
+                    var consecuencias = document.getElementById("consecuencias").value;
 
-    <script>
-        function agregartabla() {
-            var idcliente = document.getElementById("idcliente").value;
-            var fecha = document.getElementById("fecha").value;
-            var hora = document.getElementById("hora").value;
-            var lugar = document.getElementById("lugar").value;
-            var origen = document.getElementById("origen").value;
-            var cliente = document.getElementById("cliente").value;
-            var consecuencias = document.getElementById("consecuencias").value;
+                    document.getElementById("tbbody").innerHTML += "<tr>"
+                        + "<td>" + idcliente + "</td>"
+                        + "<td>" + fecha + "</td>"
+                        + "<td>" + hora + "</td>"
+                        + "<td>" + lugar + "</td>"
+                        + "<td>" + origen + "</td>"
+                        + "<td>" + cliente + "</td>"
+                        + "<td>" + consecuencias + "</td>"
+                        + "</tr>";
 
-            if (idcliente < 0 || idcliente > 10000 || idcliente == 0) {
-                alert("el id debe ser un numero entre 0 y 10000")
-            } else {
-                if (hora == 0 || hora > 0) {
-                    alert("el campo hora es requerido")
-                } else {
-                    if (lugar == null || lugar == "") {
-                        alert("el campo Lugar es requerido")
-                    } else {
-                        if (origen == null || origen == "") {
-                            alert("el campo Origen es requerido")
-                        } else {
-                            if (cliente == "default") {
-                                alert("Elija una Cliente")
-                            } else {
-                                if (consecuencias == null || consecuencias == "") {
-                                    alert("El campo consecuencias es requerido")
-                                } else {
-                                    document.getElementById("tbbody").innerHTML += "<tr>"
-                                        + "<td>" + idcliente + "</td>"
-                                        + "<td>" + fecha + "</td>"
-                                        + "<td>" + hora + "</td>"
-                                        + "<td>" + lugar + "</td>"
-                                        + "<td>" + origen + "</td>"
-                                        + "<td>" + cliente + "</td>"
-                                        + "<td>" + consecuencias + "</td>"
-                                        + "<td>" + '<input type="submit" value="Eliminar" name="modif">' + "</td>"
-                                        + "</tr>"
-                                }
-                            }
-                        }
-
-                    }
                 }
 
-            }
-
-        }
+            });
+        });
     </script>
-
 
 </head>
 
@@ -284,7 +261,7 @@
 
                 </table>
 
-                <input type="button" id="btn" value="Registrar" onclick="agregartabla();" />
+                <input type="button" id="btn" value="Registrar" />
 
             </form>
 
