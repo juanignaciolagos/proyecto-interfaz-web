@@ -5,5 +5,5 @@
  
  Desarrolladores :
  Alejandra Somodevilla (https://github.com/asomodevilla),
- Leornard Rodriguez,
+ Leornard Rodriguez, (https://github.com/leoss7)
  Juan Lagos (https://github.com/juanignaciolagos).
