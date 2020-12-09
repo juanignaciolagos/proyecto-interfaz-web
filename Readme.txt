@@ -1,7 +1,7 @@
 Integrantes: 	
-		Alejandra Somodevilla
+		Alejandra Somodevilla https://github.com/asomodevilla/proyecto-interfaz-web
 		Juan Lagos link del repositorio: https://github.com/juanignaciolagos/proyecto-interfaz-web
-		Leonard Rodriguez
+		Leonard Rodriguez https://github.com/leoss7/proyecto-interfaz-web
 
 Resumen:
 
